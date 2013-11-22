@@ -130,5 +130,8 @@ git@github.com:kuroyanagi-y/doc_github.git
 devel
 feature/pl_test_1
 
+デフォルトブランチを devel に変えてなかったから、master がベースでマージ先も
+master になった。
 
+今度はデフォルトブランチを右側の Settings で devel に変更。
 
