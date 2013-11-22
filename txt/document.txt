@@ -30,3 +30,75 @@ GitHub社という会社が管理するGitサーバー。
   ・
   ・
   ・
+
+//=============================================================
+//@ 操作日記
+//=============================================================
+
+※ローカルは git のコンソールをインストールしてある状態で、ある程度の Git コマンドを
+  打てるような状態です。
+  さらに仕事で使っているのでアカウント設定は済んでいる状態。
+
+とりあえず「New repository」でリポジトリを作ってみる。
+
+リポジトリの設定画面にいくがとりあえず以下の項目を設定
+
+  ・「Repository name」
+    リポジトリの名前
+    無難に日本語を使わずに「doc_github」とした。
+    clone で落としてくる時の名前なのでさすがに日本語は無いな。
+
+  ・Description
+    作成メモ
+    なんのために作ったかを書いておいた方が無難
+
+  ・「Public」or「Private」チェックボックス(公開、非公開)
+    Private になるとお金を払う設定になるし、テスト用なので「Public」をチェック
+
+  ・「Initialize this repository with a README」チェックボックス
+    リポジトリに「README.md」ファイルを最初からつけるかどうか。
+    とりあえずチェックしなくても問題ないのでノーチェック。
+    
+  ・「Add .gitignore」
+    なんかようわからんので「None」
+  
+  ・「Add a license」
+    なんかようわからんので「None」
+
+リポジトリが作成されたので、今度はローカルに clone で落としてくる。
+
+リポジトリのプロパティに clone 用のアクセスパスが表示されてるのでそれをコピー
+「SSH clone URL」
+  git@github.com:kuroyanagi-y/doc_github.git
+
+Git Bash にてローカルリポジトリを作りたいフォルダへ移動して以下のコマンド
+>git clone git@github.com:kuroyanagi-y/doc_github.git
+
+なんかリポジトリなんもねぇよ？ 的なメッセージが出たがとりあえずリポジトリは作られた。
+
+  ログ
+  Cloning into 'doc_github'
+  Enter passphrase for key '/c/Users/kuroyanagi-y/.ssh/id_rsa':
+  warning: You appear to have cloned an empty repository.
+
+出来たリポジトリにこのファイルをぶち込んで push 作業に挑戦。
+
+最初日本語のファイルにしたら git status が文字コードに置き換わったので素直に日本語の
+ファイルは避ける事にした。
+
+フォルダ構成
+doc_github/
+  txt/
+    document.txt
+
+コミットからプッシュまでのコマンドログ
+>git add txt/
+>git status
+>git commit -m"test_commit 1"
+>git push origin master:master
+
+origin ってもう remote お呪い気分だな・・・
+
+無事 push 反映を GitHub で確認。
+
+
